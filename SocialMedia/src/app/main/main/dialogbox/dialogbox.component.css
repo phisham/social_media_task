@@ -1,0 +1,104 @@
+.mutual{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 10px;
+
+}
+.head{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+.out_box{
+  display:grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(1,1fr);
+  max-height: 400px;
+  padding: 10px;
+  overflow-y: auto;
+}
+.box{
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgba(239, 239, 239, 0.718);
+  width: 250px;
+  height: 80px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.pic{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.frnd_req{
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+}
+.btn_req{
+  background-color: lightgrey;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+}
+.btn_acc{
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+
+}
+.frnd_req:hover{
+  box-shadow: 1px 1px 1px 1px lightgrey;
+  font-size: 1em;
+}
+.detail{
+  display: flex;
+  flex-direction: column;
+}
+.view{
+  background-color:rgba(16, 8, 8, 0.1);
+  border: 1px solid white;
+  margin-top: 20px;
+
+}
+.search{
+  background-color: rgba(79, 113, 79, 0.4);
+  color: rgba(5, 71, 20, 0.8);
+  font-weight: bolder;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgba(36, 70, 44, 0.4);
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 5%;
+}
+.line{
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+
+  /* identical to box height, or 123% */
+
+  color: #000000;
+  padding: 10px;
+  padding-left: 0px;
+}

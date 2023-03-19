@@ -1,0 +1,30 @@
+<div class="main">
+  <form class="box" [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="title">
+      <h2 style="text-shadow: 10px 10px 10px black;color:wheat ;">REGISTER <span style="font-size: 15px;font-style: normal;" class="title_txt">with</span></h2>
+      <h2 class="title_head">𝕐𝕠𝕜𝕖</h2>
+      <span class="title_txt">A social interaction platform</span>
+    </div>
+    <mat-label *ngIf="registerForm.get('username').errors" style="color: red;">*</mat-label>
+    <mat-label *ngIf="!registerForm.get('username').errors"> ✔️</mat-label>
+    <input formControlName="username" class="txt" type="text" placeholder="Username" matInput>
+    <mat-error *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched">Username is required</mat-error>
+
+    <mat-label *ngIf="registerForm.get('email').errors" style="color: red;">*</mat-label>
+    <mat-label *ngIf="!registerForm.get('email').errors"> ✔️</mat-label>
+    <input formControlName="email" class="txt" type="text" placeholder="Email" matInput>
+    <mat-error *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">Email is required</mat-error>
+    <mat-error *ngIf="!registerForm.get('email').hasError('required') && registerForm.get('email').touched && registerForm.get('email').errors">Enter existing email</mat-error>
+
+    <mat-label *ngIf="registerForm.get('password').errors" style="color: red;">*</mat-label>
+    <mat-label *ngIf="!registerForm.get('password').errors"> ✔️</mat-label>
+    <input formControlName="password" class="txt" type="password" placeholder="Password" matInput>
+    <mat-error *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">Password is required</mat-error>
+    <mat-error style="width: 200px;" *ngIf="!registerForm.get('password').hasError('required') && registerForm.get('password').touched && registerForm.get('password').errors">Password length < 6</mat-error>
+    <button [disabled]="registerForm.invalid" mat-raised-button style="background-color: aqua;margin-top: 10px;">Register</button>
+
+    <span class="cmnt">Already have an account ?</span>
+    <button mat-raised-button style="background-color: white;margin-top: 10px;" routerLink="/login">Sign In</button>
+
+  </form>
+</div>

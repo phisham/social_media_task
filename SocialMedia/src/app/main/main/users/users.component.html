@@ -1,0 +1,23 @@
+<div class="users">
+  <input class="search" type="text" placeholder="Search for the users..." [(ngModel)]="filterTerm" matInput>
+  <span class="line">Find your friends here</span>
+  <div class="out_box mat-elevation-z1" *ngIf="data.length">
+    <div class="box mat-elevation-z1" *ngFor="let i of data | filter: filterTerm">
+      <div class="content">
+        <img class="pic" [src]="i.image" alt="">
+        <div class="detail">
+          <h2>{{i.username}}</h2>
+          <h4 style="margin-top: -10px;">{{i.bio ? i.bio : 'new to instagram'}}</h4>
+          <button [ngClass]="i.status=='Requested'? 'btn_req' : i.status=='Accepted' ? 'btn_acc':'frnd_req'" [disabled]="i.status=='Requested' || i.status=='Accepted'" style="margin-top: -10px;"(click)="follow(i,$event)">{{i.status}} </button>
+        </div>
+
+      </div>
+
+      <br>
+      <button mat-button (click)="view(i)" class="view">View Mutual Friends</button>
+    </div>
+  </div>
+  <div *ngIf="!data.length">
+    <h2 style="font-family: 'Times New Roman', Times, serif;">- - No users available - -</h2>
+  </div>
+</div>

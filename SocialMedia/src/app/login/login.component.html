@@ -1,0 +1,26 @@
+<div class="main">
+  <form class="box" [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="title">
+        <h2 style="text-shadow: 10px 10px 10px black;color:wheat ;">LOGIN <span style="font-size: 15px;font-style: normal;" class="title_txt">with</span></h2>
+        <h2 class="title_head">𝕐𝕠𝕜𝕖</h2>
+        <span class="title_txt">A social interaction platform</span>
+      </div>
+      <mat-label *ngIf="loginForm.get('username').errors" style="color: red;">*</mat-label>
+      <mat-label *ngIf="!loginForm.get('username').errors"> ✔️</mat-label>
+      <input formControlName="username" class="txt" type="text" placeholder="Username or Email" matInput>
+      <mat-error *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">Username is required</mat-error>
+
+      <mat-label *ngIf="loginForm.get('password').errors" style="color: red;">*</mat-label>
+      <mat-label *ngIf="!loginForm.get('password').errors"> ✔️</mat-label>
+      <input formControlName="password" class="txt" type="password" placeholder="Password" matInput>
+      <mat-error *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">Password is required</mat-error>
+      <mat-error style="width: 200px;" *ngIf="!loginForm.get('password').hasError('required') && loginForm.get('password').touched && loginForm.get('password').errors">Password length < 6</mat-error>
+      <button [disabled]="loginForm.invalid" mat-raised-button style="background-color: aqua;margin-top: 10px;">Sign In</button>
+      <div mat-button style="border: red 1px solid;background:transparent;width: 200px;padding-left: 10px;padding-right: 10px; display: flex;flex-direction: row; justify-content: center;border-radius: 5px;margin-top: 10px;" *ngIf="showError"><mat-error>Username/Password incorrect!!</mat-error></div>
+
+      <span class="cmnt">Does not have an account ?</span>
+      <button mat-raised-button style="background-color: white;margin-top: 10px;" routerLink="/register">Sign Up</button>
+    </form>
+
+</div>
+

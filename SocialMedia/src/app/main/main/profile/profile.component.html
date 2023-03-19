@@ -1,0 +1,27 @@
+<div class="profile">
+    <form [formGroup]="profileForm" class="layout">
+
+      <img class="pic" [src]="url" alt="">
+      <mat-error *ngIf="msg">{{msg}}</mat-error>
+      <button onclick="document.getElementById('picChange').click()" mat-button style="background-color: blue;color: white;margin-bottom: 5%;margin-top: 2%;">Edit/change profile picture <input id="picChange" (change)="fileRead($event)" type="file" hidden></button>
+
+      <mat-form-field class="field">
+        <mat-label>Name</mat-label>
+        <input class="txt" type="text" [value]="profileForm.get('name').value" (change)="nameChange($event)" matInput>
+      </mat-form-field>
+      <mat-form-field class="field">
+        <mat-label>Username</mat-label>
+        <input class="txt" type="text" [value]="profileForm.get('username').value" (change)="usernameChange($event)" matInput>
+      </mat-form-field>
+      <mat-form-field class="field">
+        <mat-label>Bio</mat-label>
+        <input class="txt" type="text" [value]="profileForm.get('bio').value" (change)="bioChange($event)" matInput>
+      </mat-form-field>
+      <mat-form-field class="field">
+        <mat-label>Email</mat-label>
+        <input class="txt" type="text" [value]="profileForm.get('email').value" (change)="emailChange($event)" matInput>
+      </mat-form-field>
+      <button class="btn" (click)="save($event)">Save Changes</button>
+      <mat-error *ngIf="size_err">Something went wrong!! Image size shall be less than 50kb</mat-error>
+    </form>
+</div>

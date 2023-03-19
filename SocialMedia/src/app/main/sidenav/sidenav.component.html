@@ -1,0 +1,10 @@
+<div class="nav">
+  <div class="cntent">
+    <button matTooltip="Users"  (click)="select('users')" routerLink="./users" mat-button><mat-icon [ngClass]="users ? 'users_active' : 'users_inactive'" class="icon">group</mat-icon></button>
+    <button matTooltip="Notifications" (click)="select('notifications')" routerLink="./notifications" mat-button><mat-icon [ngClass]="notifications ? 'users_active' : 'users_inactive'" class="icon">notifications</mat-icon></button>
+    <button matTooltip="Profile" (click)="select('profile')" routerLink="./profile" mat-button><mat-icon [ngClass]="profile ? 'users_active' : 'users_inactive'" class="icon">account_circle</mat-icon></button>
+  </div>
+  <div class="log">
+    <button matTooltip="LogOut" (click)="logout()" mat-button><mat-icon class="icon">power_settings_new</mat-icon></button>
+  </div>
+</div>
