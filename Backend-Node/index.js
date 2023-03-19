@@ -24,7 +24,7 @@ app.use(express.json()) // middleware for parsing application/json
 app.use('/users', users) // middleware for listening to routes
 app.use(errors.errorHandler);
 
-mongoose.connect('mongodb+srv://phisham100:Hisham%4021@cluster0.jmjq8.mongodb.net/Social_media_task?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.jmjq8.mongodb.net/Social_media_task?retryWrites=true&w=majority')
 .then(console.log("MongoDB connected...."));
  
 // get reference to database
